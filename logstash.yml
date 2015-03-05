@@ -1,0 +1,10 @@
+---
+
+- hosts: log_receiver
+  sudo: yes
+
+  roles:
+    - logstash
+
+  vars_files:
+    - vars/vars.yml

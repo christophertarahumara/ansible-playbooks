@@ -1,0 +1,24 @@
+---
+
+#########################
+# Elasticsearch install #
+#########################
+
+# - hosts: elasticsearch
+  # sudo: yes
+
+  # roles:
+  #   - ansible-elasticsearch
+
+  # vars_files:
+  #   - vars/vars.yml
+
+
+- hosts: log_receiver
+  sudo: yes
+
+  roles:
+    - logstash
+
+  vars_files:
+    - vars/vars.yml

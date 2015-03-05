@@ -1,0 +1,14 @@
+staging ansible_ssh_host=staging.hupp.it ansible_ssh_user=hupp
+alpha   ansible_ssh_host=alpha.hupp.it   ansible_ssh_user=hupp
+
+[test]
+staging
+
+[prod]
+alpha
+
+[log_receiver]
+alpha
+
+[elasticsearch]
+alpha
