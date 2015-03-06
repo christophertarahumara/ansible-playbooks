@@ -1,11 +1,14 @@
 # {{ ansible_managed }}
 
 output {
-  # Print each event to stdout.
   stdout {
-    # Enabling 'rubydebug' codec on the stdout output will make logstash
-    # pretty-print the entire event as something similar to a JSON representation.
-    codec => rubydebug
+    codec => json
+  }
+
+  if [@fields][levelname] == "ERROR" {
+    exec {
+      command => "/opt/logstash-emailer/logstash-emailer --subject %{[@fields][exception_type]} &"
+    }
   }
 
   # You can have multiple outputs. All events generally to all outputs.
