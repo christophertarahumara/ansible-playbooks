@@ -1,0 +1,19 @@
+# {{ ansible_managed }}
+
+filter {
+  json {
+    source => "message"
+  }
+  mutate {
+    remove_field => [
+      "message",
+      "[@fields][process]",
+      "[@fields][funcName]",
+      "[@fields][levelno]",
+      "[@fields][thread]",
+      "[@fields][created]",
+      "[@fields][threadName]",
+      "[@fields][msecs]"
+    ]
+  }
+}

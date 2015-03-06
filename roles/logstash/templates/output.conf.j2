@@ -1,0 +1,17 @@
+# {{ ansible_managed }}
+
+output {
+  # Print each event to stdout.
+  stdout {
+    # Enabling 'rubydebug' codec on the stdout output will make logstash
+    # pretty-print the entire event as something similar to a JSON representation.
+    codec => rubydebug
+  }
+
+  # You can have multiple outputs. All events generally to all outputs.
+  # Output events to elasticsearch
+   elasticsearch_http  {
+    host => localhost
+    port => 9200
+  }
+}
