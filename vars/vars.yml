@@ -2,7 +2,7 @@
 
 # elasticsearch
 elasticsearch_version: 1.4.4
-elasticsearch_heap_size: 500m
+elasticsearch_heap_size: 256m
 elasticsearch_max_open_files: 65535
 elasticsearch_max_locked_memory: unlimited
 elasticsearch_timezone: "France/Paris"
